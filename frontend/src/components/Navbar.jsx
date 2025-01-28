@@ -8,7 +8,7 @@ const Navbar = () => {
   const { logout, authUser } = useAuthStore();
 
   return (
-    <header className="fixed top-0 w-full bg-white border-b border-b-blue-600 border-b-2 z-50">
+    <header className="fixed top-0 w-full bg-white border-b-2 border-b-blue-600 z-100">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           {/* Logo Section */}

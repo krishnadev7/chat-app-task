@@ -20,7 +20,7 @@ app.use(
 const PORT = process.env.PORT || 8000;
 
 app.use("/api/auth", authRoutes);
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.listen(PORT || 8000, () => {
   console.log(`Server started on port ${PORT}`);
