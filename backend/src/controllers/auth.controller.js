@@ -8,11 +8,11 @@ export const signup = async (req, res) => {
 
   try {
     if (!email || !fullName || !password) {
-      res.status(400).json({ message: "All fields are required!" });
+     return res.status(400).json({ message: "All fields are required!" });
     }
 
     if (password.length < 6) {
-      res
+     return res
         .status(400)
         .json({ message: "password must be atleast 6 characters long" });
     }
@@ -20,7 +20,7 @@ export const signup = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user) {
-      res.status(400).json({ message: "Email already exists!" });
+     return res.status(400).json({ message: "Email already exists!" });
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -58,17 +58,17 @@ export const login = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!email) {
-      res.status(400).json({ message: "Invalid credentials!" });
+      return res.status(400).json({ message: "Invalid credentials!" });
     }
 
     const isPasswordCorrect = await bcrypt.compare(password, user.password);
     if (!isPasswordCorrect) {
-      res.status(400).json({ message: "Invalid credentials!" });
+      return res.status(400).json({ message: "Invalid credentials!" });
     }
 
     generateToken(user._id, res);
 
-    res.status(200).json({
+     res.status(200).json({
       _id: user._id,
       email: user.email,
       fullName: user.fullName,

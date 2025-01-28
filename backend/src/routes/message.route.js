@@ -1,4 +1,4 @@
-import express from express;
+import express from 'express';
 import { authMiddleware } from "../middlewares/auth.middleware.js";
 import { getMessages,getUsers, sendMessage } from "../controllers/message.controller.js"
 
