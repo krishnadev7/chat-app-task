@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LogOut, MessageSquare, Settings, User, Menu, X } from 'lucide-react';
+import { LogOut, Settings, User, Menu, X, MessageCircleHeartIcon } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
               <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
-                <MessageSquare className="w-5 h-5 text-blue-600" />
+                <MessageCircleHeartIcon className="w-5 h-5 text-blue-600" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 ChatApp

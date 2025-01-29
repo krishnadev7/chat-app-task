@@ -8,6 +8,8 @@ import { useAuthStore } from "../store/useAuthStore";
 const ChatContainer = () => {
   const { messages, getMessages, isMessagesLoading, selectedUser } =
     useChatStore();
+  console.log(messages);
+
   const { authUser } = useAuthStore();
 
   useEffect(() => {
