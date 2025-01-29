@@ -12,9 +12,9 @@ const Sidebar = ({ onClose }) => {
       getUsers();
     }, [getUsers]);
   
-    // const filteredUsers = users.filter(user =>
-    //   user.fullName.toLowerCase().includes(searchQuery.toLowerCase())
-    // );
+    const filteredUsers = users.filter(user =>
+      user.fullName.toLowerCase().includes(searchQuery.toLowerCase())
+    );
   
     if (isUsersLoading) {
       return (
@@ -49,7 +49,7 @@ const Sidebar = ({ onClose }) => {
         {/* User List */}
         <div className="flex-1 overflow-y-auto">
           <div className="p-2">
-            {users.map((user) => (
+            {filteredUsers.map((user) => (
               <button
                 key={user._id}
                 onClick={() => {
@@ -85,14 +85,14 @@ const Sidebar = ({ onClose }) => {
               </button>
             ))}
   
-            {/* {filteredUsers.length === 0 && (
+            {filteredUsers.length === 0 && (
               <div className="text-center py-8 text-gray-500">
                 {searchQuery 
                   ? "No contacts found" 
                   : "No contacts available"
                 }
               </div>
-            )} */}
+            )}
           </div>
         </div>
       </aside>
