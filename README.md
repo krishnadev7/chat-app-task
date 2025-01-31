@@ -24,3 +24,8 @@ ChatApp is a full-stack real-time chat application built using the MERN stack (M
 
 + Media & File Sharing: Send images and files within chats.
 
+## Project Demo video
+
+https://github.com/user-attachments/assets/d296a328-82e3-491e-8381-c51b1a0f7083
+
+
